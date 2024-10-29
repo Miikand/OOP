@@ -1,9 +1,7 @@
 ﻿
-Desk d1 = new Desk();
+Desk d1 = new Desk("red","Nivea");
 
-d1.colour = "green";
-d1.height = 0.5m;
-d1.brand = "Auchan";
+Console.WriteLine(d1.getHeight);
 
 while(true)
 {
@@ -12,12 +10,18 @@ while(true)
 }
 
 
-class Desk
+class Desk(string color, string brand)
 {
+   
     public const decimal MAX_HEIGHT = 2.0m;
-    public decimal height;
-    public string colour;
-    public string brand;
+    public decimal height { get;  private set; } = 1.0m;
+    public string color { get; private set; } = color;
+    public string brand { get;  private set; } = brand;
+
+    public decimal getHeight()
+    {
+        return height;
+    }
 
     public void Lift()
     {
